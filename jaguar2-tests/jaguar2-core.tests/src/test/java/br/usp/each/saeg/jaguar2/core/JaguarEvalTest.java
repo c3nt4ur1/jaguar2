@@ -54,7 +54,7 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 0, 0, 1)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 0));
@@ -72,7 +72,7 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 0, 1, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 1));
@@ -90,7 +90,7 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 1, 0, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 0));
@@ -108,7 +108,7 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(1, 0, 0, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(1, 0));
@@ -126,8 +126,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 0, 0, 2)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", false);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 0));
@@ -145,8 +145,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 0, 1, 1)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", false);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 1));
@@ -164,8 +164,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 0, 2, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", false);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 2));
@@ -183,8 +183,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 2, 0, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(true);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 0));
@@ -202,8 +202,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(1, 1, 0, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(true);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(1, 0));
@@ -221,8 +221,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(2, 0, 0, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(true);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(2, 0));
@@ -240,8 +240,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 1, 0, 1)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 0));
@@ -259,8 +259,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(1, 0, 0, 1)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(1, 0));
@@ -278,8 +278,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(0, 1, 1, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(0, 1));
@@ -297,8 +297,8 @@ public class JaguarEvalTest {
         when(heuristicMock.eval(1, 0, 1, 0)).thenReturn(expectedValue);
 
         // And
-        jaguar.testFinished(false);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", true);
 
         // When
         final double value = jaguar.eval(new Spectrum(1, 1));

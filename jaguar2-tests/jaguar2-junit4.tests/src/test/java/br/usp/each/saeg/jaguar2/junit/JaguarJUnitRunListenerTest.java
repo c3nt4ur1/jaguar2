@@ -11,10 +11,8 @@
 package br.usp.each.saeg.jaguar2.junit;
 
 import static org.junit.Assert.fail;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
 
 import java.io.IOException;
 
@@ -55,7 +53,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                successTest();
+                successTest("Class", "test1");
             }
 
         });
@@ -65,7 +63,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifySuccessTest();
+                verifySuccessTest("Class", "test1");
             }
 
         });
@@ -78,7 +76,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                failTest();
+                failTest("Class", "test1");
             }
 
         });
@@ -88,7 +86,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifyFailTest();
+                verifyFailTest("Class", "test1");
             }
 
         });
@@ -101,7 +99,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                assumptionFailureTest();
+                assumptionFailureTest("Class", "test1");
             }
 
         });
@@ -111,7 +109,7 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifyAssumptionFailure();
+                verifyAssumptionFailure("Class", "test1");
             }
 
         });
@@ -126,8 +124,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                successTest();
-                successTest();
+                successTest("Class", "test1");
+                successTest("Class", "test2");
             }
 
         });
@@ -137,8 +135,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifySuccessTest();
-                verifySuccessTest();
+                verifySuccessTest("Class", "test1");
+                verifySuccessTest("Class", "test2");
             }
 
         });
@@ -151,8 +149,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                successTest();
-                failTest();
+                successTest("Class", "test1");
+                failTest("Class", "test2");
             }
 
         });
@@ -162,8 +160,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifySuccessTest();
-                verifyFailTest();
+                verifySuccessTest("Class", "test1");
+                verifyFailTest("Class", "test2");
             }
 
         });
@@ -176,8 +174,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                successTest();
-                assumptionFailureTest();
+                successTest("Class", "test1");
+                assumptionFailureTest("Class", "test2");
             }
 
         });
@@ -187,8 +185,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifySuccessTest();
-                verifyAssumptionFailure();
+                verifySuccessTest("Class", "test1");
+                verifyAssumptionFailure("Class", "test2");
             }
 
         });
@@ -203,8 +201,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                failTest();
-                successTest();
+                failTest("Class", "test1");
+                successTest("Class", "test2");
             }
 
         });
@@ -214,8 +212,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifyFailTest();
-                verifySuccessTest();
+                verifyFailTest("Class", "test1");
+                verifySuccessTest("Class", "test2");
             }
 
         });
@@ -228,8 +226,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                failTest();
-                failTest();
+                failTest("Class", "test1");
+                failTest("Class", "test2");
             }
 
         });
@@ -239,8 +237,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifyFailTest();
-                verifyFailTest();
+                verifyFailTest("Class", "test1");
+                verifyFailTest("Class", "test2");
             }
 
         });
@@ -253,8 +251,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                failTest();
-                assumptionFailureTest();
+                failTest("Class", "test1");
+                assumptionFailureTest("Class", "test2");
             }
 
         });
@@ -264,8 +262,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                verifyFailTest();
-                verifyAssumptionFailure();
+                verifyFailTest("Class", "test1");
+                verifyAssumptionFailure("Class", "test2");
             }
 
         });
@@ -280,8 +278,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                assumptionFailureTest();
-                successTest();
+                assumptionFailureTest("Class", "test1");
+                successTest("Class", "test2");
             }
 
         });
@@ -291,12 +289,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                try {
-                    inOrder.verify(jaguarMock, times(2)).testStarted();
-                    inOrder.verify(jaguarMock).testFinished(eq(false));
-                } catch (final IOException e) {
-                    fail();
-                }
+                verifyAssumptionFailure("Class", "test1");
+                verifySuccessTest("Class", "test2");
             }
 
         });
@@ -309,8 +303,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                assumptionFailureTest();
-                failTest();
+                assumptionFailureTest("Class", "test1");
+                failTest("Class", "test2");
             }
 
         });
@@ -320,12 +314,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                try {
-                    inOrder.verify(jaguarMock, times(2)).testStarted();
-                    inOrder.verify(jaguarMock).testFinished(eq(true));
-                } catch (final IOException e) {
-                    fail();
-                }
+                verifyAssumptionFailure("Class", "test1");
+                verifyFailTest("Class", "test2");
             }
 
         });
@@ -338,8 +328,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                assumptionFailureTest();
-                assumptionFailureTest();
+                assumptionFailureTest("Class", "test1");
+                assumptionFailureTest("Class", "test2");
             }
 
         });
@@ -349,11 +339,8 @@ public class JaguarJUnitRunListenerTest {
 
             @Override
             public void run() {
-                try {
-                    inOrder.verify(jaguarMock, times(2)).testStarted();
-                } catch (final IOException e) {
-                    fail();
-                }
+                verifyAssumptionFailure("Class", "test1");
+                verifyAssumptionFailure("Class", "test2");
             }
 
         });
@@ -367,9 +354,9 @@ public class JaguarJUnitRunListenerTest {
         listener.testRunFinished(mock(Result.class));
     }
 
-    private void successTest() {
+    private void successTest(final String className, final String name) {
         try {
-            final Description desc = mock(Description.class);
+            final Description desc = Description.createTestDescription(className, name);
             listener.testStarted(desc);
             listener.testFinished(desc);
         } catch (final IOException e) {
@@ -377,9 +364,9 @@ public class JaguarJUnitRunListenerTest {
         }
     }
 
-    private void failTest() {
+    private void failTest(final String className, final String name) {
         try {
-            final Description desc = mock(Description.class);
+            final Description desc = Description.createTestDescription(className, name);
             final Failure failure = mock(Failure.class);
             listener.testStarted(desc);
             listener.testFailure(failure);
@@ -389,9 +376,9 @@ public class JaguarJUnitRunListenerTest {
         }
     }
 
-    private void assumptionFailureTest() {
+    private void assumptionFailureTest(final String className, final String name) {
         try {
-            final Description desc = mock(Description.class);
+            final Description desc = Description.createTestDescription(className, name);
             final Failure failure = mock(Failure.class);
             listener.testStarted(desc);
             listener.testAssumptionFailure(failure);
@@ -408,27 +395,30 @@ public class JaguarJUnitRunListenerTest {
         inOrder.verifyNoMoreInteractions();
     }
 
-    private void verifySuccessTest() {
+    private void verifySuccessTest(final String className, final String name) {
         try {
-            inOrder.verify(jaguarMock).testStarted();
-            inOrder.verify(jaguarMock).testFinished(eq(false));
+            final String formattedName = String.format("%s(%s)", name, className);
+            inOrder.verify(jaguarMock).testStarted(formattedName);
+            inOrder.verify(jaguarMock).testFinished(formattedName, false);
         } catch (final IOException e) {
             fail();
         }
     }
 
-    private void verifyFailTest() {
+    private void verifyFailTest(final String className, final String name) {
         try {
-            inOrder.verify(jaguarMock).testStarted();
-            inOrder.verify(jaguarMock).testFinished(eq(true));
+            final String formattedName = String.format("%s(%s)", name, className);
+            inOrder.verify(jaguarMock).testStarted(formattedName);
+            inOrder.verify(jaguarMock).testFinished(formattedName, true);
         } catch (final IOException e) {
             fail();
         }
     }
 
-    private void verifyAssumptionFailure() {
+    private void verifyAssumptionFailure(final String className, final String name) {
         try {
-            inOrder.verify(jaguarMock).testStarted();
+            final String formattedName = String.format("%s(%s)", name, className);
+            inOrder.verify(jaguarMock).testStarted(formattedName);
         } catch (final IOException e) {
             fail();
         }

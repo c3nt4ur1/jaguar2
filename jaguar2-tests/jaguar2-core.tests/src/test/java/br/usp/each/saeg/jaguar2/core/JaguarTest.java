@@ -61,7 +61,7 @@ public class JaguarTest {
     @Test
     public void testStartedCallControllerDump() throws IOException {
         // When
-        jaguar.testStarted();
+        jaguar.testStarted("name");
 
         // Then
         verify(controllerMock, times(1)).dump(true);
@@ -73,28 +73,28 @@ public class JaguarTest {
         jaguar = new Jaguar(controllerMock, exporterMock, heuristicMock, true);
 
         // When
-        jaguar.testStarted();
+        jaguar.testStarted("name");
 
         // Then
         verify(controllerMock, times(1)).reset();
     }
 
     @Test
-    public void testFinishSuccessCallControllerResetWithFalse() {
+    public void testFinishSuccessCallControllerSaveWithFalse() {
         // When
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
 
         // Then
-        verify(controllerMock, times(1)).save(false);
+        verify(controllerMock, times(1)).save("name", false);
     }
 
     @Test
-    public void testFinishFailCallControllerResetWithTrue() {
+    public void testFinishFailCallControllerSaveWithTrue() {
         // When
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
 
         // Then
-        verify(controllerMock, times(1)).save(true);
+        verify(controllerMock, times(1)).save("name", true);
     }
 
     @Test
@@ -146,7 +146,7 @@ public class JaguarTest {
     @Test
     public void testFinishSuccessIncrementsPassedTests() {
         // When
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
 
         // Then
         Assert.assertEquals(0, jaguar.getFailedTests());
@@ -156,7 +156,7 @@ public class JaguarTest {
     @Test
     public void testFinishFailIncrementsFailedTests() {
         // When
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
 
         // Then
         Assert.assertEquals(1, jaguar.getFailedTests());
@@ -166,8 +166,8 @@ public class JaguarTest {
     @Test
     public void testFinishSuccessSuccessIncrementsPassedTestsTwoTimes() {
         // When
-        jaguar.testFinished(false);
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", false);
 
         // Then
         Assert.assertEquals(0, jaguar.getFailedTests());
@@ -177,8 +177,8 @@ public class JaguarTest {
     @Test
     public void testFinishFailFailIncrementsFailedTestsTwoTimes() {
         // When
-        jaguar.testFinished(true);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", true);
+        jaguar.testFinished("name", true);
 
         // Then
         Assert.assertEquals(2, jaguar.getFailedTests());
@@ -188,8 +188,8 @@ public class JaguarTest {
     @Test
     public void testFinishSuccessFailIncrementsCountersCorrectly() {
         // When
-        jaguar.testFinished(false);
-        jaguar.testFinished(true);
+        jaguar.testFinished("name", false);
+        jaguar.testFinished("name", true);
 
         // Then
         Assert.assertEquals(1, jaguar.getFailedTests());
@@ -199,8 +199,8 @@ public class JaguarTest {
     @Test
     public void testFinishFailSuccessIncrementsCountersCorrectly() {
         // When
-        jaguar.testFinished(true);
-        jaguar.testFinished(false);
+        jaguar.testFinished("name", true);
+        jaguar.testFinished("name", false);
 
         // Then
         Assert.assertEquals(1, jaguar.getFailedTests());

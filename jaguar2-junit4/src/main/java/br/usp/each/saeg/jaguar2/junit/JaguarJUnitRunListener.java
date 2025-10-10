@@ -93,13 +93,13 @@ public class JaguarJUnitRunListener extends RunListener {
     public void testStarted(final Description description) throws IOException {
         fail = false;
         skip = false;
-        jaguar.testStarted();
+        jaguar.testStarted(description.getDisplayName());
     }
 
     @Override
     public void testFinished(final Description description) {
         if (!skip) {
-            jaguar.testFinished(fail);
+            jaguar.testFinished(description.getDisplayName(), fail);
         }
     }
 

@@ -73,7 +73,7 @@ public class BaDuaController implements CoverageController {
     }
 
     @Override
-    public void save(final boolean testFailed) {
+    public void save(final String name, final boolean testFailed) {
         /*
          * BA-DUA's execution data.
          *
