@@ -49,7 +49,7 @@ public class TestVerifyDump {
         Assert.assertEquals(6, sessions.size());
         Assert.assertTrue(sessions.contains("bootstrap"));
         Assert.assertTrue(sessions.contains("passed:test1(br.usp.each.saeg.jaguar2.MaxTest)"));
-        Assert.assertTrue(sessions.contains("passed:test1(br.usp.each.saeg.jaguar2.MaxTest)"));
+        Assert.assertTrue(sessions.contains("passed:test2(br.usp.each.saeg.jaguar2.MaxTest)"));
         Assert.assertTrue(sessions.contains("passed:test3(br.usp.each.saeg.jaguar2.MaxTest)"));
         Assert.assertTrue(sessions.contains("failed:test4(br.usp.each.saeg.jaguar2.MaxTest)"));
         Assert.assertTrue(sessions.contains("failed:test5(br.usp.each.saeg.jaguar2.MaxTest)"));
