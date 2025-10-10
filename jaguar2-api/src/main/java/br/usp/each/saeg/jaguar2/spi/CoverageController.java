@@ -43,10 +43,11 @@ public interface CoverageController {
      * Save runtime code coverage data for further analysis. The data is
      * flagged when executed by a failing test case.
      *
+     * @param name       a user-understandable name for the data.
      * @param testFailed a flag indicating that code coverage data are
      *                   executed by a failing test case.
      */
-    void save(boolean testFailed);
+    void save(String name, boolean testFailed);
 
     /**
      * Analyze the saved runtime code coverage data.

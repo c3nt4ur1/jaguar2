@@ -24,7 +24,8 @@ import br.usp.each.saeg.jaguar2.spi.SpectrumExporter;
  *
  * An instance of this class is notified of events of the underlying
  * test framework by method calls {@link Jaguar#testRunStarted()},
- * {@link Jaguar#testStarted()}, {@link Jaguar#testRunFinished()} and
+ * {@link Jaguar#testStarted(String)},
+ * {@link Jaguar#testFinished(String, boolean)} and
  * {@link Jaguar#testRunFinished()}.
  *
  * By those method calls, the instance will interact with the
@@ -113,9 +114,11 @@ public class Jaguar implements SpectrumEval {
      * The current implementation reset runtime code coverage data as no
      * code executed so far is related to current test.
      *
+     * @param name a user-understandable name for the started test.
+     *
      * @throws IOException in case of exceptions during dump.
      */
-    public void testStarted() throws IOException {
+    public void testStarted(final String name) throws IOException {
         if (controller != null) {
             if (noDump) {
                 controller.reset();
@@ -133,11 +136,12 @@ public class Jaguar implements SpectrumEval {
      * further analysis. The data is flagged when executed by a failing
      * test case.
      *
+     * @param name       a user-understandable name for the finished test.
      * @param testFailed a flag indicating that test fails.
      */
-    public void testFinished(final boolean testFailed) {
+    public void testFinished(final String name, final boolean testFailed) {
         if (controller != null) {
-            controller.save(testFailed);
+            controller.save(name, testFailed);
         }
         if (testFailed) {
             failedTests++;

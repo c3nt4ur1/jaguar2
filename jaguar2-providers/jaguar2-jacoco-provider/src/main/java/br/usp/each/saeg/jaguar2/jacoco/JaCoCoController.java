@@ -70,6 +70,7 @@ public class JaCoCoController extends ClassFilesController implements CoverageCo
     @Override
     public void init() {
         super.init();
+        agent.setSessionId("bootstrap");
         spectrumBuilder = new SpectrumBuilder();
     }
 
@@ -84,7 +85,12 @@ public class JaCoCoController extends ClassFilesController implements CoverageCo
     }
 
     @Override
-    public void save(final boolean testFailed) {
+    public void save(final String name, final boolean testFailed) {
+        /*
+         * Set current session id with name and test status.
+         */
+        agent.setSessionId((testFailed ? "failed:" : "passed:") + name);
+
         /*
          * JaCoCo's execution data.
          *

@@ -11,7 +11,10 @@
  */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -31,18 +34,25 @@ public class TestVerifyDump {
             )
         );
 
-        int sessions = 0;
+        final List<String> sessions = new ArrayList<String>();
+        final QName id = QName.valueOf("id");
         while (reader.hasNext()) {
             final XMLEvent nextEvent = reader.nextEvent();
             if (nextEvent.isStartElement()) {
                 final StartElement startElement = nextEvent.asStartElement();
                 if (startElement.getName().getLocalPart().equals("sessioninfo")) {
-                    sessions++;
+                    sessions.add(startElement.getAttributeByName(id).getValue());
                 }
             }
         }
 
-        Assert.assertEquals(6, sessions);
+        Assert.assertEquals(6, sessions.size());
+        Assert.assertTrue(sessions.contains("bootstrap"));
+        Assert.assertTrue(sessions.contains("passed:test1(br.usp.each.saeg.jaguar2.MaxTest)"));
+        Assert.assertTrue(sessions.contains("passed:test2(br.usp.each.saeg.jaguar2.MaxTest)"));
+        Assert.assertTrue(sessions.contains("passed:test3(br.usp.each.saeg.jaguar2.MaxTest)"));
+        Assert.assertTrue(sessions.contains("failed:test4(br.usp.each.saeg.jaguar2.MaxTest)"));
+        Assert.assertTrue(sessions.contains("failed:test5(br.usp.each.saeg.jaguar2.MaxTest)"));
     }
 
 }
