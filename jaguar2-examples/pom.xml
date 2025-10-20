@@ -32,6 +32,9 @@
 		<module>jaguar2-example-junit4</module>
 		<module>jaguar2-example-junit4-ba-dua</module>
 		<module>jaguar2-example-junit4-jacoco</module>
+		<module>jaguar2-example-cli-junit4</module>
+		<module>jaguar2-example-cli-junit4-ba-dua</module>
+		<module>jaguar2-example-cli-junit4-jacoco</module>
 	</modules>
 
 </project>
