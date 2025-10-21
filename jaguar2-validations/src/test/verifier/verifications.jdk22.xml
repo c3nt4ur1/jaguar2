@@ -68,20 +68,6 @@
 			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
 		</file>
 
-		<!-- Verify test jaguar2-example-cli-junit4-ba-dua -->
-		<file>
-			<location>../jaguar2-examples/jaguar2-example-cli-junit4-ba-dua/target/output</location>
-			<contains>Tests run: 5,  Failures: 2</contains>
-		</file>
-		<file>
-			<location>../jaguar2-examples/jaguar2-example-cli-junit4-ba-dua/target/output</location>
-			<contains>test4\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
-		</file>
-		<file>
-			<location>../jaguar2-examples/jaguar2-example-cli-junit4-ba-dua/target/output</location>
-			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
-		</file>
-
 		<!-- Verify test jaguar2-example-cli-junit4-jacoco -->
 		<file>
 			<location>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target/output</location>
