@@ -39,7 +39,7 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>copy-jacoco</id>
+						<id>copy-badua</id>
 						<goals>
 							<goal>copy</goal>
 						</goals>
