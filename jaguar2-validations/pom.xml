@@ -164,6 +164,13 @@
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-verifier-plugin</artifactId>
+						<configuration>
+							<verificationFile>${basedir}/src/test/verifier/verifications.jdk22.xml</verificationFile>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-enforcer-plugin</artifactId>
 						<executions>
 							<execution>
@@ -198,6 +205,32 @@
 								</configuration>
 							</execution>
 						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>xml-maven-plugin</artifactId>
+						<configuration>
+							<validationSets>
+								<validationSet>
+									<dir>../jaguar2-examples/jaguar2-example-junit4-jacoco/target</dir>
+									<includes>
+										<include>jaguar2.xml</include>
+									</includes>
+								</validationSet>
+								<validationSet>
+									<dir>../jaguar2-examples/jaguar2-example-junit4-ba-dua/target</dir>
+									<includes>
+										<include>jaguar2.xml</include>
+									</includes>
+								</validationSet>
+								<validationSet>
+									<dir>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target</dir>
+									<includes>
+										<include>jaguar2.xml</include>
+									</includes>
+								</validationSet>
+							</validationSets>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
