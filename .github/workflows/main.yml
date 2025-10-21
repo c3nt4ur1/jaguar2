@@ -38,10 +38,10 @@ jobs:
       run: java -version && javac -version
     - name: Build
       if: ${{ matrix.java >= 8 }}
-      run: ./mvnw install -Prelease -Dbytecode=${{ matrix.java }}
+      run: ./mvnw --batch-mode --errors --no-transfer-progress --show-version install -Prelease -Dbytecode=${{ matrix.java }}
     - name: Build
       if: ${{ matrix.java < 8 }}
-      run: ./mvnw install -Prelease -Djdk=${{ matrix.java }} -Dbytecode=${{ matrix.java }}
+      run: ./mvnw --batch-mode --errors --no-transfer-progress --show-version install -Prelease -Djdk=${{ matrix.java }} -Dbytecode=${{ matrix.java }}
 
   issue-80:
     strategy:
@@ -74,4 +74,4 @@ jobs:
     - name: Java version
       run: java -version && javac -version
     - name: Build
-      run: ./mvnw install -Prelease -Djdk=${{ matrix.jdk }} -Dbytecode=${{ matrix.jdk }}
+      run: ./mvnw --batch-mode --errors --no-transfer-progress --show-version install -Prelease -Djdk=${{ matrix.jdk }} -Dbytecode=${{ matrix.jdk }}
