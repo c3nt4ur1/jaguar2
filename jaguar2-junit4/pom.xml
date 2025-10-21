@@ -25,6 +25,23 @@
 		<license.header.fileLocation>../LICENSE-TEMPLATE.txt</license.header.fileLocation>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Main-Class>br.usp.each.saeg.jaguar2.junit.JaguarTestRunner</Main-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
