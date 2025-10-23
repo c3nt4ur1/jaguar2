@@ -75,12 +75,22 @@
 									<type>md5</type>
 								</requireFileChecksum>
 								<requireFileChecksum>
+									<file>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target/jaguar2.csv</file>
+									<checksum>d41d8cd98f00b204e9800998ecf8427e</checksum>
+									<type>md5</type>
+								</requireFileChecksum>
+								<requireFileChecksum>
 									<file>../jaguar2-examples/jaguar2-example-junit4-jacoco/target/jaguar2.csv</file>
 									<checksum>d46dc1896d312426b0f45b55b2055837</checksum>
 									<type>md5</type>
 								</requireFileChecksum>
 								<requireFileChecksum>
 									<file>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target/jaguar2.csv</file>
+									<checksum>d46dc1896d312426b0f45b55b2055837</checksum>
+									<type>md5</type>
+								</requireFileChecksum>
+								<requireFileChecksum>
+									<file>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/jaguar2.csv</file>
 									<checksum>d46dc1896d312426b0f45b55b2055837</checksum>
 									<type>md5</type>
 								</requireFileChecksum>
@@ -95,12 +105,22 @@
 									<type>md5</type>
 								</requireFileChecksum>
 								<requireFileChecksum>
+									<file>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target/jaguar2.xml</file>
+									<checksum>710b9f0fba70b834703da7b3aaa274b9</checksum>
+									<type>md5</type>
+								</requireFileChecksum>
+								<requireFileChecksum>
 									<file>../jaguar2-examples/jaguar2-example-junit4-jacoco/target/jaguar2.xml</file>
 									<checksum>195983d8b7396375439d2aec507045b3</checksum>
 									<type>md5</type>
 								</requireFileChecksum>
 								<requireFileChecksum>
 									<file>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target/jaguar2.xml</file>
+									<checksum>195983d8b7396375439d2aec507045b3</checksum>
+									<type>md5</type>
+								</requireFileChecksum>
+								<requireFileChecksum>
+									<file>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/jaguar2.xml</file>
 									<checksum>195983d8b7396375439d2aec507045b3</checksum>
 									<type>md5</type>
 								</requireFileChecksum>
@@ -143,6 +163,18 @@
 						</validationSet>
 						<validationSet>
 							<dir>../jaguar2-examples/jaguar2-example-cli-junit4-ba-dua/target</dir>
+							<includes>
+								<include>jaguar2.xml</include>
+							</includes>
+						</validationSet>
+						<validationSet>
+							<dir>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target</dir>
+							<includes>
+								<include>jaguar2.xml</include>
+							</includes>
+						</validationSet>
+						<validationSet>
+							<dir>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target</dir>
 							<includes>
 								<include>jaguar2.xml</include>
 							</includes>
@@ -191,12 +223,22 @@
 											<type>md5</type>
 										</requireFileChecksum>
 										<requireFileChecksum>
+											<file>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/jaguar2.csv</file>
+											<checksum>d46dc1896d312426b0f45b55b2055837</checksum>
+											<type>md5</type>
+										</requireFileChecksum>
+										<requireFileChecksum>
 											<file>../jaguar2-examples/jaguar2-example-junit4-jacoco/target/jaguar2.xml</file>
 											<checksum>195983d8b7396375439d2aec507045b3</checksum>
 											<type>md5</type>
 										</requireFileChecksum>
 										<requireFileChecksum>
 											<file>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target/jaguar2.xml</file>
+											<checksum>195983d8b7396375439d2aec507045b3</checksum>
+											<type>md5</type>
+										</requireFileChecksum>
+										<requireFileChecksum>
+											<file>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/jaguar2.xml</file>
 											<checksum>195983d8b7396375439d2aec507045b3</checksum>
 											<type>md5</type>
 										</requireFileChecksum>
@@ -225,6 +267,12 @@
 								</validationSet>
 								<validationSet>
 									<dir>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target</dir>
+									<includes>
+										<include>jaguar2.xml</include>
+									</includes>
+								</validationSet>
+								<validationSet>
+									<dir>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target</dir>
 									<includes>
 										<include>jaguar2.xml</include>
 									</includes>

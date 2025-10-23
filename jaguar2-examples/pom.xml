@@ -34,6 +34,8 @@
 		<module>jaguar2-example-junit4-jacoco</module>
 		<module>jaguar2-example-cli-junit4</module>
 		<module>jaguar2-example-cli-junit4-jacoco</module>
+		<module>jaguar2-example-ant-junit4</module>
+		<module>jaguar2-example-ant-junit4-jacoco</module>
 	</modules>
 
 	<profiles>
@@ -44,6 +46,7 @@
 			</activation>
 			<modules>
 				<module>jaguar2-example-cli-junit4-ba-dua</module>
+				<module>jaguar2-example-ant-junit4-ba-dua</module>
 			</modules>
 		</profile>
 	</profiles>
