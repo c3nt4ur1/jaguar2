@@ -1,0 +1,60 @@
+<!--
+
+    Copyright (c) 2021, 2021 University of Sao Paulo and Contributors.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+
+    Contributors:
+        Roberto Araujo - initial API and implementation and/or initial documentation
+
+-->
+<project name="jaguar2-example-ant-junit4-ba-dua">
+
+	<property name="main.src.dir" value="src/main/java" />
+	<property name="test.src.dir" value="src/test/java" />
+
+	<property name="main.build.dir" value="target/classes" />
+	<property name="test.build.dir" value="target/test-classes" />
+
+	<path id="classpath">
+		<pathelement location="${main.build.dir}"/>
+		<pathelement location="${test.build.dir}"/>
+		<fileset dir="target/dependency">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${main.build.dir}" />
+		<mkdir dir="${test.build.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${main.src.dir}" destdir="${main.build.dir}" includeantruntime="false" debug="true" />
+	</target>
+
+	<target name="test-compile" depends="compile">
+		<javac srcdir="${test.src.dir}" destdir="${test.build.dir}" includeantruntime="false">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+	<target name="test" depends="test-compile">
+		<junit fork="true" haltonfailure="true" dir=".">
+			<classpath refid="classpath"/>
+			<jvmarg value="-javaagent:target/badua-agent.jar"/>
+			<sysproperty key="jaguar2.classesDirs" value="${main.build.dir}"/>
+			<sysproperty key="output.file" value="target/badua.ser"/>
+			<formatter classname="br.usp.each.saeg.jaguar2.junit.JaguarJUnitResultFormatter" />
+			<formatter type="brief" />
+			<batchtest todir="target">
+				<fileset dir="${test.src.dir}">
+					<include name="**/*Test.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+</project>

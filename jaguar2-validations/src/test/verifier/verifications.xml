@@ -95,5 +95,47 @@
 			<location>../jaguar2-examples/jaguar2-example-cli-junit4-jacoco/target/output</location>
 			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
 		</file>
+
+		<!-- Verify test jaguar2-example-ant-junit4 -->
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>Tests run: 5, Failures: 1, Errors: 1, Skipped: 0</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test4\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
+
+		<!-- Verify test jaguar2-example-ant-junit4-ba-dua -->
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>Tests run: 5, Failures: 1, Errors: 1, Skipped: 0</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test4\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-ba-dua/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
+
+		<!-- Verify test jaguar2-example-ant-junit4-jacoco -->
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>Tests run: 5, Failures: 1, Errors: 1, Skipped: 0</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test4\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
+		<file>
+			<location>../jaguar2-examples/jaguar2-example-ant-junit4-jacoco/target/TEST-br.usp.each.saeg.jaguar2.MaxTest.txt</location>
+			<contains>test5\(br.usp.each.saeg.jaguar2.MaxTest\)</contains>
+		</file>
 	</files>
 </verifications>
